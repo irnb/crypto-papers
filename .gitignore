@@ -1,2 +1,10 @@
-venv
-.vscode
+venv/
+.venv/
+.vscode/
+__pycache__/
+*.pyc
+.DS_Store
+data/inbox/**/*.json
+data/inbox/**/*.xml
+data/inbox/**/*.tmp
+!data/inbox/.gitkeep

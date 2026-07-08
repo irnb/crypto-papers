@@ -1,0 +1,69 @@
+---
+sources:
+  - label: EthResearch
+    base_url: https://ethresear.ch
+    latest_path: /latest.json
+    categories_path: /categories.json
+    watch_categories:
+      - Economics
+      - zk-s[nt]arks
+      - Layer 2
+      - Execution Layer Research
+      - Security
+      - Privacy
+      - Cryptography
+      - Consensus
+      - EVM
+      - Decentralized exchanges
+    watch_terms:
+      - MEV
+      - PBS
+      - FOCIL
+      - EVM
+      - L2
+      - rollup
+      - zk
+      - SNARK
+      - STARK
+      - privacy
+      - mempool
+      - encrypted mempool
+      - forced inclusion
+      - execution
+      - gas
+      - state growth
+      - post-quantum
+      - AI agent
+      - autonomous agent
+
+  - label: Delving Bitcoin
+    base_url: https://delvingbitcoin.org
+    latest_path: /latest.json
+    categories_path: /categories.json
+    watch_categories:
+      - Protocol Design
+      - Implementation
+      - Economics
+    watch_terms:
+      - covenant
+      - CTV
+      - vault
+      - annex
+      - taproot
+      - miniscript
+      - transaction privacy
+      - coinjoin
+      - Lightning
+      - DoS
+      - mempool
+      - relay
+      - policy
+      - post-quantum
+      - PQC
+      - quantum
+      - Winternitz
+      - ML-DSA
+
+max_pages_per_source: 3
+output_json: data/inbox/forums/latest.json
+output_markdown: data/inbox/forums/latest.md

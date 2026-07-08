@@ -1,0 +1,57 @@
+---
+queries:
+  - label: DeFi
+    query: 'all:DeFi OR all:"decentralized finance"'
+  - label: AMM / DEX
+    query: 'all:"automated market maker" OR all:AMM OR all:DEX'
+  - label: MEV
+    query: 'all:MEV AND all:blockchain'
+  - label: ZK blockchain
+    query: '(all:"zero knowledge" OR all:"zero-knowledge" OR all:zkSNARK OR all:zkVM) AND all:blockchain'
+  - label: zkVM
+    query: 'all:zkVM OR all:"zero-knowledge virtual machine"'
+  - label: Ethereum execution
+    query: 'all:EVM AND (all:execution OR all:gas OR all:parallelism OR all:state)'
+  - label: Rollups
+    query: 'all:rollup AND (all:Ethereum OR all:blockchain OR all:L2)'
+  - label: Bitcoin covenants
+    query: 'all:Bitcoin AND (all:covenant OR all:covenants OR all:vault)'
+  - label: Bitcoin PQC
+    query: 'all:Bitcoin AND (all:"post-quantum" OR all:PQC OR all:quantum)'
+  - label: Verifiable computation
+    query: 'all:"verifiable computation" OR all:"verifiable inference"'
+  - label: AI agents crypto
+    query: '(all:"AI agent" OR all:"autonomous agent") AND (all:blockchain OR all:crypto OR all:Ethereum)'
+
+max_results_per_query: 100
+sleep_seconds: 2
+output_path: data/inbox/arxiv/latest.json
+
+filter_words:
+  - DeFi
+  - decentralized finance
+  - DEX
+  - AMM
+  - automated market maker
+  - MEV
+  - maximal extractable value
+  - zero-knowledge
+  - zero knowledge
+  - zk
+  - zkVM
+  - proof system
+  - prover
+  - verifier
+  - rollup
+  - EVM
+  - Ethereum
+  - Bitcoin
+  - covenant
+  - vault
+  - post-quantum
+  - PQC
+  - privacy
+  - verifiable computation
+  - verifiable inference
+  - AI agent
+  - autonomous agent
