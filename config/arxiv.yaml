@@ -4,6 +4,8 @@ queries:
     query: 'all:DeFi OR all:"decentralized finance"'
   - label: AMM / DEX
     query: 'all:"automated market maker" OR all:AMM OR all:DEX'
+  - label: Prediction markets
+    query: '(all:"prediction market" OR all:"prediction markets" OR all:Polymarket OR all:futarchy OR all:"information market") AND (all:blockchain OR all:crypto OR all:DeFi OR all:Ethereum)'
   - label: MEV
     query: 'all:MEV AND all:blockchain'
   - label: ZK blockchain
@@ -14,14 +16,40 @@ queries:
     query: 'all:EVM AND (all:execution OR all:gas OR all:parallelism OR all:state)'
   - label: Rollups
     query: 'all:rollup AND (all:Ethereum OR all:blockchain OR all:L2)'
+  - label: L2 architecture
+    query: '(all:"layer 2" OR all:L2 OR all:rollup) AND (all:architecture OR all:interoperability OR all:sequencer OR all:"data availability")'
+  - label: Core protocol design
+    query: 'all:blockchain AND (all:"protocol design" OR all:"protocol architecture" OR all:consensus OR all:"peer-to-peer" OR all:p2p)'
+  - label: Node internals
+    query: '(all:blockchain OR all:Bitcoin OR all:Ethereum) AND (all:node OR all:client OR all:mempool OR all:storage OR all:"state sync" OR all:"peer-to-peer")'
+  - label: Protocol architecture
+    query: '(all:blockchain OR all:Bitcoin OR all:Ethereum) AND (all:"software architecture" OR all:"system architecture" OR all:"protocol architecture" OR all:"implementation tradeoff" OR all:"trade-off")'
+  - label: Consensus and networking
+    query: 'all:blockchain AND (all:consensus OR all:networking OR all:"peer-to-peer" OR all:p2p OR all:gossip)'
   - label: Bitcoin covenants
     query: 'all:Bitcoin AND (all:covenant OR all:covenants OR all:vault)'
+  - label: Bitcoin node policy
+    query: 'all:Bitcoin AND (all:mempool OR all:relay OR all:policy OR all:"Bitcoin Core" OR all:"transaction relay")'
+  - label: BitVM
+    query: 'all:BitVM OR all:"Bitcoin virtual machine"'
   - label: Bitcoin PQC
     query: 'all:Bitcoin AND (all:"post-quantum" OR all:PQC OR all:quantum)'
   - label: Verifiable computation
     query: 'all:"verifiable computation" OR all:"verifiable inference"'
   - label: AI agents crypto
     query: '(all:"AI agent" OR all:"autonomous agent") AND (all:blockchain OR all:crypto OR all:Ethereum)'
+  - label: Intents and account abstraction
+    query: '(all:intent OR all:intents OR all:"account abstraction" OR all:"ERC-4337" OR all:"smart account") AND (all:Ethereum OR all:blockchain OR all:crypto)'
+  - label: Stablecoins and payments
+    query: '(all:stablecoin OR all:stablecoins OR all:payment OR all:payments OR all:x402 OR all:"payment channel") AND (all:blockchain OR all:crypto OR all:Ethereum)'
+  - label: RWA tokenization
+    query: '(all:"real-world asset" OR all:RWA OR all:tokenization OR all:tokenized) AND (all:blockchain OR all:crypto OR all:Ethereum)'
+  - label: Emerging applications
+    query: '(all:"application layer" OR all:"consumer crypto" OR all:"on-chain" OR all:"decentralized application" OR all:dApp) AND (all:blockchain OR all:crypto OR all:Ethereum)'
+  - label: Wallet identity reputation
+    query: '(all:wallet OR all:identity OR all:reputation OR all:"social graph") AND (all:blockchain OR all:crypto OR all:Ethereum)'
+  - label: DePIN
+    query: '(all:DePIN OR all:"decentralized physical infrastructure" OR all:"decentralized storage" OR all:"decentralized compute") AND (all:blockchain OR all:crypto)'
 
 max_results_per_query: 100
 sleep_seconds: 2
@@ -33,6 +61,11 @@ filter_words:
   - DEX
   - AMM
   - automated market maker
+  - prediction market
+  - prediction markets
+  - Polymarket
+  - futarchy
+  - information market
   - MEV
   - maximal extractable value
   - zero-knowledge
@@ -43,14 +76,60 @@ filter_words:
   - prover
   - verifier
   - rollup
+  - layer 2
+  - L2
+  - protocol design
+  - protocol architecture
+  - software architecture
+  - system architecture
+  - node
+  - node internals
+  - client
+  - client architecture
+  - p2p
+  - peer-to-peer
+  - networking
+  - consensus
+  - state sync
+  - storage
+  - mempool
+  - relay
+  - policy
+  - trade-off
+  - tradeoff
+  - intent
+  - intents
+  - account abstraction
+  - ERC-4337
+  - smart account
   - EVM
   - Ethereum
   - Bitcoin
+  - BitVM
   - covenant
   - vault
   - post-quantum
   - PQC
   - privacy
+  - payment
+  - payments
+  - x402
+  - payment channel
+  - stablecoin
+  - stablecoins
+  - RWA
+  - real-world asset
+  - tokenization
+  - tokenized
+  - DePIN
+  - wallet
+  - identity
+  - reputation
+  - consumer crypto
+  - application layer
+  - on-chain
+  - dApp
+  - decentralized application
   - verifiable computation
   - verifiable inference
   - AI agent

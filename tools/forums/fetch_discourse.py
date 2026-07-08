@@ -228,22 +228,21 @@ def render_source_markdown(source: str, topics: list[dict[str, Any]]) -> str:
     lines = [
         f"# {source}",
         "",
-        f"Rows: `{len(topics)}` ranked forum topics.",
+        f"Rows: `{len(topics)}` scored forum topics.",
         "",
-        "| rank | score | last post | category | topic | signals | posts | views |",
-        "| ---: | ---: | --- | --- | --- | --- | ---: | ---: |",
+        "| score | category | title | signals | posts | views | date |",
+        "| ---: | --- | --- | --- | ---: | ---: | --- |",
     ]
 
-    for rank, topic in enumerate(topics, start=1):
+    for topic in topics:
         row = [
-            rank,
             topic.get("quality_score", 0),
-            (topic.get("last_posted_at") or "")[:10],
             topic.get("category"),
             markdown_link(topic["title"], topic["url"]),
             ", ".join(topic.get("quality_signals", [])),
             topic.get("posts_count"),
             topic.get("views"),
+            (topic.get("last_posted_at") or "")[:10],
         ]
         lines.append("| " + " | ".join(escape_cell(value) for value in row) + " |")
 

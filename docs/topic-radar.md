@@ -1,16 +1,21 @@
 # Topic Radar
 
-Last updated: 2026-06-19.
+Last updated: 2026-07-08.
 
 This is the working scope for the revived repo. It should change as your interests and the market's technical direction change.
 
 | Track | Why Watch It | Watch Terms | Good Output |
 | --- | --- | --- | --- |
 | ZK and proving systems | This is now core infrastructure, not only privacy. Follow prover performance, recursion, zkVMs, lookup arguments, proof orchestration, and circuit security. | zkVM, STARK, SNARK, lookup, recursion, prover, verifier, proof generation, constraint bugs | Benchmark note, implementation reading, proof-system map |
+| Core protocol design | Watch the design pressure behind consensus, networking, mempool semantics, execution validity, and what must stay simple at the protocol boundary. | protocol design, protocol architecture, consensus, p2p, peer-to-peer, gossip, validation, invariants | Spec note, invariant map, protocol tradeoff write-up |
+| Node internals and client tradeoffs | This is where protocol ideas become real software: sync, storage, indexing, mempool policy, networking, database layout, and resource limits. | node internals, client architecture, state sync, storage, mempool, relay, validation, pruning, database | Client-code reading, bottleneck map, implementation experiment |
 | Core Ethereum execution | Execution-layer bottlenecks are shifting toward state growth, gas metering, parallelism, delayed execution, encrypted mempools, and forced inclusion. | EVM, gas metering, state growth, parallel execution, mempool, FOCIL, PBS | Spec note, client-code reading, tradeoff write-up |
-| Bitcoin protocol design | Bitcoin research is active around post-quantum migration, covenants/vaults, transaction privacy, Lightning DoS, filters, and wallet semantics. | covenant, CTV, vault, annex, PQC, Winternitz, ML-DSA, Lightning, BIP | BIP/spec note, policy simulation, Bitcoin Core PR reading |
+| Bitcoin protocol design | Bitcoin research is active around post-quantum migration, covenants/vaults, transaction privacy, Lightning DoS, filters, BitVM, and wallet/node policy. | covenant, CTV, vault, annex, BitVM, PQC, Winternitz, ML-DSA, Lightning, BIP, mempool policy | BIP/spec note, policy simulation, Bitcoin Core PR reading |
+| L2 and BitVM architecture | L2 is now an architecture and operations problem: bridge trust assumptions, sequencing, data availability, proof systems, interop, and Bitcoin verification models. | L2, rollup, sequencer, bridge, data availability, interoperability, BitVM, fraud proof, validity proof | Architecture comparison, trust-boundary map, implementation reading |
 | Privacy and identity | Privacy is moving from mixers into token standards, private assets, source-of-funds proofs, wallets, identity, and mempool design. | private token, pERC20, source of funds, encrypted mempool, stealth, ring signature, ownership fragmentation | Threat model, protocol comparison, implementation idea |
 | MEV and market structure | DeFi still matters when it exposes mechanism-design, ordering, auction, oracle, or liquidity problems. | MEV, GEV, batch auction, oracle extractable value, AMM, arbitrage, liquidation | Problem map, mechanism model, small simulation |
+| Prediction markets and information finance | Prediction markets are a compact surface for oracle design, market integrity, dispute resolution, incentives, and user-facing crypto apps. | prediction market, Polymarket, futarchy, information market, oracle, dispute, settlement, liquidity | Mechanism comparison, oracle/dispute map, app failure analysis |
+| Emerging application layer | Track new crypto apps when they pressure protocol, wallet, payments, privacy, or market-structure assumptions. | intents, account abstraction, ERC-4337, smart accounts, wallets, x402, stablecoins, RWA, tokenization, DePIN, reputation, consumer crypto | App architecture map, threat model, implementation reading |
 | AI agents and verifiable compute | AI can become a crypto-adjacent source of demand for verification, provenance, sandboxing, and agent accountability. | verifiable inference, AI agent, proof of training, provenance, agent identity, zkML | Reading list, boundary map, experiment proposal |
 | Application-layer DeFi | Keep DeFi in scope, but as a problem source rather than the whole repo identity. | lending, stablecoin, DEX, liquidation, oracle, risk, composability | Failure analysis, mechanism comparison, implementation note |
 

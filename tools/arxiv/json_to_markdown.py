@@ -19,6 +19,22 @@ ANCHOR_TERMS = {
     "verifiable computation": 5,
     "verifiable inference": 5,
     "formal verification": 5,
+    "protocol design": 6,
+    "protocol architecture": 6,
+    "software architecture": 5,
+    "system architecture": 5,
+    "node": 3,
+    "node internals": 6,
+    "client": 3,
+    "client architecture": 5,
+    "p2p": 5,
+    "peer-to-peer": 5,
+    "networking": 4,
+    "consensus": 5,
+    "state sync": 5,
+    "storage": 4,
+    "mempool policy": 5,
+    "relay policy": 5,
     "EVM": 5,
     "Ethereum": 4,
     "gas metering": 5,
@@ -28,10 +44,21 @@ ANCHOR_TERMS = {
     "data availability": 5,
     "MEV": 5,
     "PBS": 5,
+    "prediction market": 6,
+    "prediction markets": 6,
+    "Polymarket": 6,
+    "futarchy": 5,
+    "information market": 5,
     "auction": 3,
+    "intent": 4,
+    "intents": 4,
+    "account abstraction": 5,
+    "ERC-4337": 5,
+    "smart account": 4,
     "encrypted mempool": 5,
     "mempool": 4,
     "Bitcoin": 4,
+    "BitVM": 6,
     "covenant": 5,
     "vault": 4,
     "Lightning": 4,
@@ -46,12 +73,31 @@ ANCHOR_TERMS = {
     "attack": 3,
     "exploit": 3,
     "oracle": 3,
+    "payment": 3,
+    "payments": 3,
+    "x402": 5,
+    "payment channel": 4,
+    "RWA": 4,
+    "real-world asset": 4,
+    "tokenization": 4,
+    "tokenized": 3,
+    "DePIN": 4,
+    "wallet": 3,
+    "identity": 3,
+    "reputation": 3,
+    "consumer crypto": 4,
+    "application layer": 4,
+    "on-chain": 2,
+    "dApp": 3,
+    "decentralized application": 3,
     "AMM": 4,
     "DEX": 3,
     "liquidation": 3,
     "stablecoin": 3,
     "benchmark": 4,
     "implementation": 4,
+    "trade-off": 4,
+    "tradeoff": 4,
     "dataset": 3,
 }
 
@@ -67,6 +113,20 @@ QUERY_WEIGHTS = {
     "AI agents crypto": 2,
     "AMM / DEX": 2,
     "DeFi": 1,
+    "Core protocol design": 5,
+    "Node internals": 5,
+    "Protocol architecture": 5,
+    "Consensus and networking": 4,
+    "Bitcoin node policy": 5,
+    "BitVM": 5,
+    "L2 architecture": 4,
+    "Prediction markets": 5,
+    "Intents and account abstraction": 4,
+    "Stablecoins and payments": 4,
+    "RWA tokenization": 3,
+    "Emerging applications": 3,
+    "Wallet identity reputation": 3,
+    "DePIN": 2,
 }
 
 NOISE_TERMS = {
@@ -74,7 +134,6 @@ NOISE_TERMS = {
     "healthcare": 4,
     "medical": 4,
     "genomic": 4,
-    "vehicular": 3,
     "5G": 3,
     "6G": 3,
     "chatbot": 3,
@@ -82,6 +141,16 @@ NOISE_TERMS = {
     "student": 3,
     "physics": 4,
     "qubit": 3,
+    "anti-money laundering": 5,
+    "AML": 5,
+    "VASP": 4,
+    "energy": 4,
+    "IoT": 4,
+    "wireless": 4,
+    "supply chain": 4,
+    "vehicular": 4,
+    "federated learning": 4,
+    "FinTech": 3,
 }
 
 
@@ -228,6 +297,7 @@ def build_markdown(input_path: Path, min_score: int, limit: int) -> str:
     total = len(normalize_items(data))
     items = ranked_items(data, min_score, limit)
 
+    all_items = normalize_items(data)
     lines = [
         "# Ranked arXiv inbox",
         "",
@@ -254,7 +324,37 @@ def build_markdown(input_path: Path, min_score: int, limit: int) -> str:
         ]
         lines.append("| " + " | ".join(escape_cell(value) for value in row) + " |")
 
+    lines.extend(render_unranked_table(all_items))
+
     return "\n".join(lines) + "\n"
+
+
+def render_unranked_table(items: list[dict]) -> list[str]:
+    lines = [
+        "",
+        "## All arXiv papers, unranked",
+        "",
+        f"Rows: `{len(items)}` in original fetch order.",
+        "",
+        "| number | published | track | paper | first sentence | pdf |",
+        "| ---: | --- | --- | --- | --- | --- |",
+    ]
+
+    for number, item in enumerate(items, start=1):
+        pdf_url = item.get("pdf_url") or item.get("pdf url") or ""
+        entry_id = item.get("entry_id") or ""
+        published = item.get("published") or item.get("date") or ""
+        row = [
+            number,
+            published[:10],
+            item.get("query", ""),
+            markdown_link(item.get("title", ""), entry_id),
+            first_sentence(item.get("summary", "")),
+            markdown_link("pdf", pdf_url),
+        ]
+        lines.append("| " + " | ".join(escape_cell(value) for value in row) + " |")
+
+    return lines
 
 
 def main() -> None:

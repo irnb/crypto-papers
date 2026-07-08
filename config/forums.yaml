@@ -6,6 +6,7 @@ sources:
     categories_path: /categories.json
     watch_categories:
       - Economics
+      - Applications
       - zk-s[nt]arks
       - Layer 2
       - Execution Layer Research
@@ -17,6 +18,11 @@ sources:
       - Decentralized exchanges
     watch_terms:
       - MEV
+      - prediction market
+      - prediction markets
+      - Polymarket
+      - futarchy
+      - information market
       - PBS
       - FOCIL
       - EVM
@@ -29,6 +35,38 @@ sources:
       - mempool
       - encrypted mempool
       - forced inclusion
+      - protocol design
+      - protocol architecture
+      - client architecture
+      - node
+      - p2p
+      - peer-to-peer
+      - networking
+      - consensus
+      - state sync
+      - storage
+      - sequencer
+      - data availability
+      - interoperability
+      - BitVM
+      - intent
+      - intents
+      - account abstraction
+      - ERC-4337
+      - smart account
+      - wallet
+      - identity
+      - reputation
+      - x402
+      - payment
+      - payments
+      - stablecoin
+      - RWA
+      - real-world asset
+      - tokenization
+      - DePIN
+      - consumer crypto
+      - application layer
       - execution
       - gas
       - state growth
@@ -51,6 +89,19 @@ sources:
       - annex
       - taproot
       - miniscript
+      - BitVM
+      - bridge
+      - payment
+      - payments
+      - x402
+      - wallet
+      - identity
+      - prediction market
+      - prediction markets
+      - node
+      - Bitcoin Core
+      - validation
+      - consensus
       - transaction privacy
       - coinjoin
       - Lightning
@@ -58,6 +109,12 @@ sources:
       - mempool
       - relay
       - policy
+      - package relay
+      - transaction relay
+      - p2p
+      - peer-to-peer
+      - storage
+      - UTXO
       - post-quantum
       - PQC
       - quantum

@@ -62,7 +62,7 @@ def collect(config: dict) -> list[dict]:
                     "summary": result.summary,
                     "pdf_url": canonical_pdf_url(result),
                     "entry_id": result.entry_id,
-                    "categories": [category.term for category in result.categories],
+                    "categories": arxiv_categories(result),
                     "published": result.published.isoformat(),
                     "query": label,
                 }
@@ -83,6 +83,13 @@ def normalize_query(item: object) -> tuple[str, str]:
 
 def canonical_pdf_url(result: arxiv.Result) -> str:
     return f"https://arxiv.org/pdf/{result.get_short_id()}.pdf"
+
+
+def arxiv_categories(result: arxiv.Result) -> list[str]:
+    categories = []
+    for category in result.categories:
+        categories.append(getattr(category, "term", category))
+    return categories
 
 
 def main() -> None:
