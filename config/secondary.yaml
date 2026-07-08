@@ -1,0 +1,141 @@
+---
+sources:
+  - label: Flashbots writings
+    kind: rss
+    url: https://writings.flashbots.net/rss.xml
+    source_weight: 5
+    signals:
+      - MEV
+      - PBS
+      - market structure
+    watch_terms:
+      - MEV
+      - PBS
+      - builder
+      - block building
+      - mempool
+      - sequencing
+      - auction
+      - TEE
+      - privacy
+
+  - label: Paradigm research
+    kind: paradigm_research
+    url: https://www.paradigm.xyz/research
+    base_url: https://www.paradigm.xyz
+    source_weight: 5
+    signals:
+      - mechanism design
+      - protocol design
+    watch_terms:
+      - prediction market
+      - prediction markets
+      - futarchy
+      - Bitcoin
+      - post-quantum
+      - AMM
+      - stablecoin
+      - bridge
+      - MEV
+      - zkVM
+      - open source
+      - agent
+
+  - label: a16z crypto research
+    kind: a16z_preloaded_posts
+    url: https://a16zcrypto.com/research/
+    base_url: https://a16zcrypto.com
+    source_weight: 4
+    signals:
+      - cryptography
+      - systems
+    watch_terms:
+      - consensus
+      - prediction market
+      - prediction markets
+      - censorship resistance
+      - L1
+      - L2
+      - zkVM
+      - SNARK
+      - Fiat-Shamir
+      - distributed systems
+      - attacker model
+      - transaction supply chain
+
+  - label: zkSecurity blog
+    kind: rss
+    url: https://blog.zksecurity.xyz/feed.xml
+    source_weight: 5
+    signals:
+      - ZK security
+      - implementation risk
+    watch_terms:
+      - zk
+      - zero-knowledge
+      - circuit
+      - circuits
+      - zkVM
+      - proof
+      - formal verification
+      - Lean
+      - MPC
+      - cryptography
+      - audit
+      - bug
+      - soundness
+
+  - label: L2BEAT scaling summary
+    kind: monitor_page
+    url: https://l2beat.com/scaling/summary
+    source_weight: 2
+    signals:
+      - L2 monitoring
+      - risk surface
+    watch_terms:
+      - rollup
+      - L2
+      - zkEVM
+      - data availability
+      - stage
+      - risk
+
+watch_terms:
+  - protocol design
+  - protocol architecture
+  - implementation
+  - node
+  - client
+  - consensus
+  - mempool
+  - execution
+  - data availability
+  - privacy
+  - security
+  - bridge
+  - wallet
+  - payments
+  - stablecoin
+  - RWA
+  - DePIN
+  - account abstraction
+  - AI agent
+  - verifiable
+  - post-quantum
+
+quality_terms:
+  - paper
+  - spec
+  - implementation
+  - benchmark
+  - measurement
+  - attack
+  - bug
+  - proof
+  - protocol
+  - open source
+  - formal verification
+
+max_items_per_source: 20
+output_json: data/inbox/secondary/latest.json
+output_markdown: data/inbox/secondary/latest.md

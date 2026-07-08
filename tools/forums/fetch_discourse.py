@@ -23,7 +23,7 @@ def load_config(path: Path) -> dict[str, Any]:
 def fetch_json(url: str) -> dict[str, Any]:
     request = Request(
         url,
-        headers={"User-Agent": "DeFiPapers research inbox/0.1"},
+        headers={"User-Agent": "crypto-papers research inbox/0.1"},
     )
     with urlopen(request, timeout=30) as response:
         return json.load(response)
